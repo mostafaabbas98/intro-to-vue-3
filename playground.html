@@ -6,5 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Playground — Complete Intro to Vue 3</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Well Well Well</h1>
+    <div id="app">
+      <h2>App By {{ name }}</h2>
+      <p v-if="active === true">State: Good</p>
+      <p v-else>State: Stopped</p>
+      <ul>
+        <li v-for="month in numOfMonths">Month: {{ month }}</li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      const app = createApp({
+        data() {
+          return {
+            name: "Mostafa",
+            active: true,
+            numOfMonths: ["Jun", "Feb", "Mar"],
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
 </html>
