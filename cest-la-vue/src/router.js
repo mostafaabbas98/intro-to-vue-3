@@ -1,6 +1,4 @@
 import HomePage from "./views/HomePage.vue";
-import LoginPage from "./views/LoginPage.vue";
-import UserPage from "./views/UserPage.vue";
 
 export const routes = [
   {
@@ -9,10 +7,10 @@ export const routes = [
   },
   {
     path: "/login",
-    component: LoginPage,
+    component: () => import("./views/LoginPage.vue"),
   },
   {
     path: "/users",
-    component: UserPage,
+    component: () => import("./views/UserPage.vue"),
   },
 ];
