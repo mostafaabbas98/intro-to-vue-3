@@ -16,7 +16,7 @@ const shortUserList = computed(() => {
     </p>
     <hr />
     <ul>
-      <li v-for="user in shortUserList">
+      <li v-for="(user, idx) in shortUserList" :key="idx">
         {{ user.name }}
       </li>
     </ul>
